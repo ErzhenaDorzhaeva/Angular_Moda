@@ -1,23 +1,24 @@
-<div class="card mb-3" style="max-width: 1440px">
-  <div class="row g-0">
+<div
+  class="card mb-3"
+  style="max-width: 1440px"
+  *ngFor="let note of noteService.notes"
+>
+  <div class="row g-0" (click)="goToDetails(note.id)">
     <div class="col-md-4">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">{{ note.title }}</h5>
         <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
+          {{ note.text }}
         </p>
         <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
+          <small class="text-muted">{{ note.data }}</small>
         </p>
       </div>
     </div>
     <div class="col-md-8">
-      <img
-        class="image_style"
-        src="../../../assets/images/promotion2.jpg"
-        alt="Second slide"
-      />
+      <span class="image_style">
+        <img class="image_style" src="{{ note.image }}" alt="Second slide" />
+      </span>
     </div>
   </div>
 </div>

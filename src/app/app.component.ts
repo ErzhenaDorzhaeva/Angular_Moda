@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TitleComponent } from './components/title/title.component';
@@ -5,7 +6,7 @@ import { TitleComponent } from './components/title/title.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TitleComponent],
+  imports: [RouterOutlet, TitleComponent, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
