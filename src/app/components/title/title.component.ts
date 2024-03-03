@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { MenuComponent } from '../menu/menu.component';
 import { NotesComponent } from '../notes/notes.component';
 import { PromotionComponent } from '../promotion/promotion.component';
-import { TestComponent } from '../test/test.component';
 
 @Component({
   selector: 'app-title',
@@ -14,7 +14,7 @@ import { TestComponent } from '../test/test.component';
     NotesComponent,
     HeaderComponent,
     MenuComponent,
-    TestComponent,
+    FooterComponent,
   ],
   templateUrl: './title.component.html',
   styleUrl: './title.component.scss',
