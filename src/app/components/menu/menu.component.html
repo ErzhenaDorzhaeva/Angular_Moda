@@ -1,11 +1,23 @@
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand">Navbar</a>
-  <form class="form-inline">
-    <input
-      class="form-control mr-sm-2"
-      type="search"
-      placeholder="Поиск статьи..."
-      aria-label="Search"
-    />
-  </form>
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title" id="offcanvas-basic-title">Содержание</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="offcanvas.dismiss('Cross click')"
+      ></button>
+    </div>
+  </ng-template>
+
+  <span (click)="open(content)">
+    <img class="image_style" src="../../../assets/images/hamburger.png" />
+  </span>
+
+  <input
+    class="input_style"
+    placeholder="Поиск статьи..."
+    [(ngModel)]="noteService.empty"
+  />
 </nav>

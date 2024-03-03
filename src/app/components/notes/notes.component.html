@@ -1,9 +1,9 @@
 <div
   class="card mb-3"
   style="max-width: 1440px"
-  *ngFor="let note of noteService.notes"
+  *ngFor="let note of noteService.notes | filter : noteService.empty"
 >
-  <div class="row g-0" (click)="goToDetails(note.id)">
+  <div *ngIf="note.id % 2 !== 0" class="row g-0" (click)="goToDetails(note.id)">
     <div class="col-md-4">
       <div class="card-body">
         <h5 class="card-title">{{ note.title }}</h5>
@@ -17,8 +17,27 @@
     </div>
     <div class="col-md-8">
       <span class="image_style">
-        <img class="image_style" src="{{ note.image }}" alt="Second slide" />
+        <img class="image_style" src="{{ note.image }}" />
       </span>
+    </div>
+  </div>
+
+  <div *ngIf="note.id % 2 == 0" class="row g-0" (click)="goToDetails(note.id)">
+    <div class="col-md-7">
+      <span class="image_style_right">
+        <img class="image_style" src="{{ note.image }}" />
+      </span>
+    </div>
+    <div class="col-md-5">
+      <div class="card-body">
+        <h5 class="card-title">{{ note.title }}</h5>
+        <p class="card-text">
+          {{ note.text }}
+        </p>
+        <p class="card-text">
+          <small class="text-muted">{{ note.data }}</small>
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,12 +1,13 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FilterPipe } from '../../pipes/filter.pipe';
 import { NoteService } from '../../service/note.service';
 
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, FilterPipe, NgIf],
   templateUrl: './notes.component.html',
   styleUrl: './notes.component.scss',
 })

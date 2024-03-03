@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { MenuComponent } from '../menu/menu.component';
 import { NotesComponent } from '../notes/notes.component';
@@ -18,4 +19,9 @@ import { TestComponent } from '../test/test.component';
   templateUrl: './title.component.html',
   styleUrl: './title.component.scss',
 })
-export class TitleComponent {}
+export class TitleComponent {
+  constructor(private route: Router) {}
+  goToTest() {
+    this.route.navigate(['test']);
+  }
+}

@@ -8,6 +8,7 @@ import { INote } from '../types';
 })
 export class NoteService {
   notes: INote[] = [];
+  empty = '';
   constructor(private http: HttpClient) {}
 
   getNotes(): Observable<INote[]> {

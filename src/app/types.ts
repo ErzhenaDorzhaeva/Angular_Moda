@@ -5,3 +5,8 @@ export class INote {
   text: string;
   data: string;
 }
+export class ITest {
+  id: number;
+  title: string;
+  text: string;
+}
